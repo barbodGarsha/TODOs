@@ -47,11 +47,13 @@ header {
 .content {
     display: flex;
     height: 100%;
+    width: 100%;
 }
 
 .lists {
+    flex: 1;
     background-color: #C98655;
-    width: 30rem;
+    min-width: 30rem;
     .container {
         flex-direction: column;
     }
@@ -115,6 +117,62 @@ header {
         }
         .selected {
             font-weight: bold;
+        }
+    }
+}
+
+.tasks {
+    flex: 4;
+    height: 100%;
+    .container {
+        flex-direction: column;
+    }
+
+    .top {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .task {
+        display: flex;
+        justify-content: space-between;
+        background-color: #C98655;
+        border-radius: 8px;
+        padding: .5rem 1rem;
+        .left {
+            display: flex;
+            align-items: center;
+            p {
+                font-size: 1.5rem;
+                color: #2E303B;
+            }
+            input {
+                height: 2rem;
+                width: 2rem;
+             
+                appearance: none;
+                border: none;
+                border-radius: 4px;
+                outline: none;
+                transition-duration: 0.3s;
+                background-color: #E8E6E2;
+                cursor: pointer;
+                margin-right: 1rem;
+            }
+
+            input:checked {
+                background-color: #2E303B;
+            }
+            
+        }
+        .right {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            img {
+                height: 80%;
+                cursor: pointer;
+            }
         }
     }
 }

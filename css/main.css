@@ -55,11 +55,15 @@ header .logo {
   display: -ms-flexbox;
   display: flex;
   height: 100%;
+  width: 100%;
 }
 
 .lists {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
   background-color: #C98655;
-  width: 30rem;
+  min-width: 30rem;
 }
 
 .lists .container {
@@ -142,5 +146,91 @@ header .logo {
 
 .lists .lists-cta .selected {
   font-weight: bold;
+}
+
+.tasks {
+  -webkit-box-flex: 4;
+      -ms-flex: 4;
+          flex: 4;
+  height: 100%;
+}
+
+.tasks .container {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.tasks .top {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.tasks .task {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  background-color: #C98655;
+  border-radius: 8px;
+  padding: .5rem 1rem;
+}
+
+.tasks .task .left {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.tasks .task .left p {
+  font-size: 1.5rem;
+  color: #2E303B;
+}
+
+.tasks .task .left input {
+  height: 2rem;
+  width: 2rem;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  border: none;
+  border-radius: 4px;
+  outline: none;
+  -webkit-transition-duration: 0.3s;
+          transition-duration: 0.3s;
+  background-color: #E8E6E2;
+  cursor: pointer;
+  margin-right: 1rem;
+}
+
+.tasks .task .left input:checked {
+  background-color: #2E303B;
+}
+
+.tasks .task .right {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.tasks .task .right img {
+  height: 80%;
+  cursor: pointer;
 }
 /*# sourceMappingURL=main.css.map */
