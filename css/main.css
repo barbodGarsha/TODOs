@@ -113,4 +113,34 @@ header .logo {
 .lists .add-list-cta button:hover {
   background-color: rgba(232, 230, 226, 0.15);
 }
+
+.lists .subhead {
+  font-size: 1.15rem;
+  margin-bottom: .8rem;
+}
+
+.lists .lists-cta {
+  position: relative;
+}
+
+.lists .lists-cta .lists-cta__sidebar {
+  position: absolute;
+  width: 3px;
+  height: 100%;
+  background-color: #2E303B;
+  top: -0.4rem;
+  left: .5rem;
+  padding: .4rem 0;
+}
+
+.lists .lists-cta p {
+  font-size: 1.2rem;
+  padding-left: 1.5rem;
+  margin-bottom: .5rem;
+  cursor: pointer;
+}
+
+.lists .lists-cta .selected {
+  font-weight: bold;
+}
 /*# sourceMappingURL=main.css.map */
