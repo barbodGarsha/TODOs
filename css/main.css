@@ -68,4 +68,49 @@ header .logo {
       -ms-flex-direction: column;
           flex-direction: column;
 }
+
+.lists .add-list-cta {
+  overflow: hidden;
+  background-color: #2E303B;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  border-radius: 8px;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 2rem;
+  padding-left: .5rem;
+  margin-bottom: 1rem;
+}
+
+.lists .add-list-cta input {
+  width: 80%;
+  background-color: #2E303B;
+  border: none;
+  outline: none;
+  color: #E8E6E2;
+}
+
+.lists .add-list-cta button {
+  background-color: rgba(232, 230, 226, 0.2);
+  border: none;
+  outline: none;
+  cursor: pointer;
+  border-radius: 8px;
+  height: 2rem;
+  width: 2rem;
+  font-size: 1.5rem;
+  color: #AA9CA0;
+}
+
+.lists .add-list-cta button:hover {
+  background-color: rgba(232, 230, 226, 0.15);
+}
 /*# sourceMappingURL=main.css.map */
