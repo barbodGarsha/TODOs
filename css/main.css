@@ -28,5 +28,22 @@ li {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  padding: 1.5rem 3rem;
+}
+
+header {
+  background-color: #2E303B;
+}
+
+header .container {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+header .logo {
+  color: #C98655;
+  font-weight: bold;
+  font-size: 1.5rem;
 }
 /*# sourceMappingURL=main.css.map */

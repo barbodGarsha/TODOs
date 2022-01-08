@@ -26,4 +26,17 @@ li {
 
 .container {
     display: flex;
+    padding: 1.5rem 3rem;
+}
+
+header {
+    background-color: #2E303B;
+    .container {
+        align-items: center;
+    }
+    .logo {
+        color: #C98655;
+        font-weight: bold;
+        font-size: 1.5rem;
+    }
 }
