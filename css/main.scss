@@ -29,13 +29,14 @@ li {
 
 .container {
     display: flex;
-    padding: 1.5rem 3rem;
+    padding: 3rem 3rem;
 }
 
 header {
     background-color: #2E303B;
     .container {
         align-items: center;
+        padding: 1.5rem 3rem;
     }
     .logo {
         color: #C98655;
@@ -122,15 +123,23 @@ header {
 }
 
 .tasks {
+    overflow-y: scroll;
     flex: 4;
-    height: 100%;
+    height: 95%;
     .container {
         flex-direction: column;
+        padding-left:  5rem;
+        padding-right: 5rem;
     }
 
     .top {
         display: flex;
         justify-content: space-between;
+        margin-bottom: 2rem;
+        p {
+            color: #2E303B;
+            font-size: 2rem;
+        }
     }
 
     .task {
@@ -139,6 +148,7 @@ header {
         background-color: #C98655;
         border-radius: 8px;
         padding: .5rem 1rem;
+        margin-bottom: .5rem;
         .left {
             display: flex;
             align-items: center;
