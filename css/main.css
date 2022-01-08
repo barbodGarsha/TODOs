@@ -4,6 +4,9 @@ body {
   margin: 0;
   padding: 0;
   font-family: 'Poppins', sans-serif;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
 }
 
 a, li, h1, h2, p {
@@ -45,5 +48,24 @@ header .logo {
   color: #C98655;
   font-weight: bold;
   font-size: 1.5rem;
+}
+
+.content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 100%;
+}
+
+.lists {
+  background-color: #C98655;
+  width: 30rem;
+}
+
+.lists .container {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 /*# sourceMappingURL=main.css.map */
