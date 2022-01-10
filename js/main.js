@@ -22,7 +22,7 @@ function render_lists() {
         sidebar.classList.add("lists-cta__sidebar")
         lists_container.appendChild(sidebar)
     }
-    lists.forEach(list => {
+    lists.forEach(function(list){
       const lists_item = document.createElement('p')
       lists_item.dataset.listId = list.id
       lists_item.classList.add("list")
