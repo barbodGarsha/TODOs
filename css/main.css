@@ -181,6 +181,52 @@ header .logo {
   font-size: 2rem;
 }
 
+.tasks .add-task-cta {
+  overflow: hidden;
+  background-color: #2E303B;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  border-radius: 8px;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 3.5rem;
+  padding-left: .5rem;
+  margin-bottom: 3rem;
+}
+
+.tasks .add-task-cta input {
+  width: 100%;
+  background-color: #2E303B;
+  border: none;
+  outline: none;
+  color: #E8E6E2;
+  font-size: 1.3rem;
+}
+
+.tasks .add-task-cta button {
+  background-color: rgba(232, 230, 226, 0.2);
+  border: none;
+  outline: none;
+  cursor: pointer;
+  border-radius: 8px;
+  height: 3.5rem;
+  width: 3.5rem;
+  font-size: 3rem;
+  color: #AA9CA0;
+}
+
+.tasks .add-task-cta button:hover {
+  background-color: rgba(232, 230, 226, 0.15);
+}
+
 .tasks .task {
   display: -webkit-box;
   display: -ms-flexbox;

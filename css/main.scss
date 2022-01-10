@@ -142,6 +142,42 @@ header {
         }
     }
 
+    .add-task-cta {
+        overflow: hidden;
+        background-color: #2E303B;
+        height: fit-content;
+        display: flex;
+        border-radius: 8px;
+        justify-content: space-between;
+        align-items: center;
+        height: 3.5rem;
+        padding-left: .5rem;
+        margin-bottom: 3rem;
+        input {
+            width: 100%;
+            background-color: #2E303B;
+            border: none;
+            outline:none;
+            color: #E8E6E2;
+            font-size: 1.3rem;
+        }
+
+        button {
+            background-color: rgba($color: #E8E6E2, $alpha: .2);
+            border: none;
+            outline:none;
+            cursor: pointer;;
+            border-radius: 8px;
+            height: 3.5rem;
+            width: 3.5rem;
+            font-size: 3rem;
+            color: #AA9CA0;
+        }
+        button:hover {
+            background-color: rgba($color: #E8E6E2, $alpha: .15);
+        }
+    }
+
     .task {
         display: flex;
         justify-content: space-between;
