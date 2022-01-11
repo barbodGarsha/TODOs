@@ -18,6 +18,15 @@ const LOCAL_STORAGE_SELECTED_LIST_ID_KEY = 'task.selected_list_id'
 let lists = JSON.parse(localStorage.getItem(LOCAL_STORAGE_LIST_KEY)) || []
 let selected_list_id = localStorage.getItem(LOCAL_STORAGE_SELECTED_LIST_ID_KEY)
 
+tasks_container.addEventListener('click', function(e) {
+  if (e.target.tagName.toLowerCase() === 'input') {
+    const selected_list = lists.find(list => list.id === selected_list_id)
+    const selected_task = selected_list.tasks.find(task => task.id === e.target.id)
+    selected_task.complete = e.target.checked
+    save()
+    render_task_count(selected_list)
+  }
+})
 
 new_task_form.addEventListener('submit', function(e) {
   e.preventDefault()
