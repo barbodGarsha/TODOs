@@ -181,6 +181,23 @@ header .logo {
   font-size: 2rem;
 }
 
+.tasks .bottom {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 0 .3rem;
+  margin-top: .4rem;
+}
+
+.tasks .bottom p {
+  font-size: 1.2rem;
+  color: #2E303B;
+  cursor: pointer;
+}
+
 .tasks .add-task-cta {
   overflow: hidden;
   background-color: #2E303B;

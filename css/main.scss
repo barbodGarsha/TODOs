@@ -142,6 +142,17 @@ header {
         }
     }
 
+    .bottom {
+        display: flex;
+        justify-content: space-between;
+        padding: 0 .3rem;
+        margin-top: .4rem;
+        p {
+            font-size: 1.2rem;
+            color: #2E303B;
+            cursor: pointer;
+        }
+    }
     .add-task-cta {
         overflow: hidden;
         background-color: #2E303B;
