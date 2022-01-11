@@ -11,12 +11,12 @@ const task_template = document.getElementById('task=template')
 
 const new_task_form = document.querySelector('[data-new-task-form]')
 const new_task_input = document.querySelector('[data-new-task-input]')
-const clearCompleteTasksButton = document.querySelector('[data-clear-complete-tasks-button]')
+const clear_complete_tasks_button = document.querySelector('[data-clear-complete-tasks-button]')
 
 const LOCAL_STORAGE_LIST_KEY = 'task.lists'
 const LOCAL_STORAGE_SELECTED_LIST_ID_KEY = 'task.selected_list_id'
 let lists = JSON.parse(localStorage.getItem(LOCAL_STORAGE_LIST_KEY)) || []
-let selected_list_id = localStorage.getItem(LOCAL_STORAGE_SELECTED_LIST_ID_KEY)
+let selected_list_id = localStorage.getItem(LOCAL_STORAGE_SELECTED_LIST_ID_KEY) || null
 
 tasks_container.addEventListener('click', function(e) {
   if (e.target.tagName.toLowerCase() === 'input') {
@@ -68,6 +68,12 @@ delete_list_button.addEventListener('click', function(e) {
   save_and_render()
 })
 
+clear_complete_tasks_button.addEventListener('click', function(e) {
+  const selected_list = lists.find(list => list.id === selected_list_id)
+  selected_list.tasks = selected_list.tasks.filter(task => task.complete !== true)
+  save_and_render()
+})
+
 function create_list(name) {
     return { id: Date.now().toString(), name: name, tasks: [] }
 }
@@ -82,7 +88,8 @@ function render()
   render_lists()
 
   const selected_list = lists.find(list => list.id === selected_list_id)
-  if (selected_list_id == null) {
+  
+  if (selected_list == null) {
     list_display_container.style.display = 'none'
   } else {
     list_display_container.style.display = ''
