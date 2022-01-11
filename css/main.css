@@ -307,4 +307,22 @@ header .logo {
   height: 80%;
   cursor: pointer;
 }
+
+@media screen and (max-width: 1275px) {
+  :root {
+    font-size: .8rem;
+  }
+}
+
+@media screen and (max-width: 995px) {
+  :root {
+    font-size: .7rem;
+  }
+}
+
+@media screen and (max-width: 835px) {
+  :root {
+    font-size: 0.6 0.2rem;
+  }
+}
 /*# sourceMappingURL=main.css.map */
