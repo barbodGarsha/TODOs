@@ -26,6 +26,11 @@ tasks_container.addEventListener('click', function(e) {
     save()
     render_task_count(selected_list)
   }
+  else if(e.target.tagName.toLowerCase() === 'img') {
+    const selected_list = lists.find(list => list.id === selected_list_id)
+    selected_list.tasks = selected_list.tasks.filter(task => task.id !== e.target.id)
+    save_and_render()
+  }
 })
 
 new_task_form.addEventListener('submit', function(e) {
@@ -120,6 +125,8 @@ function render_lists() {
 function render_tasks(selected_list) {
   selected_list.tasks.forEach(function(task) {
     const task_element = document.importNode(task_template.content, true)
+    const delete_button = task_element.querySelector('img')
+    delete_button.id = task.id
     const checkbox = task_element.querySelector('input')
     checkbox.id = task.id
     checkbox.checked = task.complete
