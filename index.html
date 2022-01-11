@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TODOs</title>
     <link rel="stylesheet" href="css/main.css">
+    <script src="js/main.js" defer></script>
 </head>
 <body>
     <header>
@@ -41,20 +42,20 @@
                     <p class="subhead" data-list-title >School</p>
                     <p class="task-count" data-list-count>2 Tasks Remaining</p>
                 </div>
-                <form class="add-task-cta">
-                    <input type="text" name="" id="" placeholder="Add a new task...">
+                <form class="add-task-cta" data-new-task-form>
+                    <input type="text" name="" id="" placeholder="Add a new task..." data-new-task-input>
                     <button type="submit">+</button>
                 </form>
                 <div class="tasks-cta" data-tasks>
                 </div>
                 <div class="bottom">
                     <p class="delete-list" data-delete-list>Delete List</p>
-                    <p class="clear-tasks">Clear Tasks</p>
+                    <p class="clear-tasks" data-clear-complete-tasks-button>Clear Tasks</p>
                 </div>
             </div>
         </div>
     </div>
-
+    
     <template id="task=template">
         <div class="task">
             <div class="left">
@@ -66,6 +67,6 @@
             </div>
         </div>
     </template>
-    <script src="js/main.js"></script>
+    
 </body>
 </html>

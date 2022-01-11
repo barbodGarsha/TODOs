@@ -7,12 +7,29 @@ const list_display_container = document.querySelector('[data-list-display-contai
 const list_title_element = document.querySelector('[data-list-title]')
 const list_count_element = document.querySelector('[data-list-count]')
 const tasks_container = document.querySelector('[data-tasks]')
-const task_template = document.getElementById('task-template')
+const task_template = document.getElementById('task=template')
+
+const new_task_form = document.querySelector('[data-new-task-form]')
+const new_task_input = document.querySelector('[data-new-task-input]')
+const clearCompleteTasksButton = document.querySelector('[data-clear-complete-tasks-button]')
 
 const LOCAL_STORAGE_LIST_KEY = 'task.lists'
 const LOCAL_STORAGE_SELECTED_LIST_ID_KEY = 'task.selected_list_id'
 let lists = JSON.parse(localStorage.getItem(LOCAL_STORAGE_LIST_KEY)) || []
 let selected_list_id = localStorage.getItem(LOCAL_STORAGE_SELECTED_LIST_ID_KEY)
+
+
+new_task_form.addEventListener('submit', function(e) {
+  e.preventDefault()
+  const task_name = new_task_input.value
+  if (task_name == null || task_name === '') return
+  const task = create_task(task_name)
+  new_task_input.value = null
+  const selected_list = lists.find(list => list.id === selected_list_id)
+  selected_list.tasks.push(task)
+  save_and_render()
+})
+
 
 lists_container.addEventListener('click', function(e) {
   if (e.target.classList.contains('list')) {
@@ -39,6 +56,10 @@ delete_list_button.addEventListener('click', function(e) {
 
 function create_list(name) {
     return { id: Date.now().toString(), name: name, tasks: [] }
+}
+
+function create_task(name) {
+  return { id: Date.now().toString(), name: name, complete: false }
 }
 
 function render()
@@ -90,12 +111,11 @@ function render_lists() {
 function render_tasks(selected_list) {
   selected_list.tasks.forEach(function(task) {
     const task_element = document.importNode(task_template.content, true)
-    const checkbox = taskElement.querySelector('input')
+    const checkbox = task_element.querySelector('input')
     checkbox.id = task.id
     checkbox.checked = task.complete
-    const text = task_element.querySelector('task-text')
-    label.htmlFor = text.id
-    label.append(text.name)
+    const text = task_element.querySelector('p')
+    text.innerText = task.name
     tasks_container.appendChild(task_element)
   })
 }  
