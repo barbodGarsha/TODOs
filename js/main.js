@@ -3,6 +3,11 @@ const new_list_form = document.querySelector('[data-new-list-form]')
 const new_list_input = document.querySelector('[data-new-list-input]')
 const lists_container = document.querySelector('[data-lists]')
 const delete_list_button = document.querySelector('[data-delete-list]')
+const list_display_container = document.querySelector('[data-list-display-container]')
+const list_title_element = document.querySelector('[data-list-title]')
+const list_count_element = document.querySelector('[data-list-count]')
+const tasks_container = document.querySelector('[data-tasks]')
+const task_template = document.getElementById('task-template')
 
 const LOCAL_STORAGE_LIST_KEY = 'task.lists'
 const LOCAL_STORAGE_SELECTED_LIST_ID_KEY = 'task.selected_list_id'
@@ -38,8 +43,19 @@ function create_list(name) {
 
 function render()
 {
-    clear_element(lists_container)
-    render_lists()
+  clear_element(lists_container)
+  render_lists()
+
+  const selected_list = lists.find(list => list.id === selected_list_id)
+  if (selected_list_id == null) {
+    list_display_container.style.display = 'none'
+  } else {
+    list_display_container.style.display = ''
+    list_title_element.innerText = selected_list.name
+    render_task_count(selected_list)
+    clear_element(tasks_container)
+    render_tasks(selected_list)
+  }
 }
 
 function save_and_render() {
@@ -70,6 +86,25 @@ function render_lists() {
       lists_container.appendChild(lists_item)
     })
   }
+
+function render_tasks(selected_list) {
+  selected_list.tasks.forEach(function(task) {
+    const task_element = document.importNode(task_template.content, true)
+    const checkbox = taskElement.querySelector('input')
+    checkbox.id = task.id
+    checkbox.checked = task.complete
+    const text = task_element.querySelector('task-text')
+    label.htmlFor = text.id
+    label.append(text.name)
+    tasks_container.appendChild(task_element)
+  })
+}  
+
+function render_task_count(selected_list) {
+  const incomplete_task_count = selected_list.tasks.filter(task => !task.complete).length
+  const taskString = incomplete_task_count === 1 ? "task" : "tasks"
+  list_count_element.innerText = `${incomplete_task_count} ${taskString} remaining`
+}
 
 function clear_element(element)
 {
