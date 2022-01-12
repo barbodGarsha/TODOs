@@ -324,5 +324,17 @@ header .logo {
   :root {
     font-size: 0.6 0.2rem;
   }
+  .content {
+    position: relative;
+  }
+  .lists {
+    -webkit-transform: translateX(-90%);
+            transform: translateX(-90%);
+    z-index: 99999;
+    position: absolute;
+    height: 100vh;
+    -webkit-transition: 200ms;
+    transition: 200ms;
+  }
 }
 /*# sourceMappingURL=main.css.map */

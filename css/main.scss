@@ -252,4 +252,14 @@ header {
     :root {
         font-size: .6.2rem;
     }
+    .content {
+        position: relative;
+    }
+    .lists {
+        transform: translateX(-90%);
+        z-index: 99999;
+        position: absolute;
+        height: 100vh;
+        transition: 200ms;
+    }
 }

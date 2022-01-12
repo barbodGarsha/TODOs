@@ -13,10 +13,44 @@ const new_task_form = document.querySelector('[data-new-task-form]')
 const new_task_input = document.querySelector('[data-new-task-input]')
 const clear_complete_tasks_button = document.querySelector('[data-clear-complete-tasks-button]')
 
+const lists_menu = document.querySelector('[data-lists-menu]')
+const tasks_div = document.querySelector('[data-tasks-div]')
+
 const LOCAL_STORAGE_LIST_KEY = 'task.lists'
 const LOCAL_STORAGE_SELECTED_LIST_ID_KEY = 'task.selected_list_id'
 let lists = JSON.parse(localStorage.getItem(LOCAL_STORAGE_LIST_KEY)) || []
 let selected_list_id = localStorage.getItem(LOCAL_STORAGE_SELECTED_LIST_ID_KEY) || null
+let is_lists_menu_open = false;
+
+window.addEventListener('resize', function(event) {
+  var media_query_menu = 'screen and (max-width:835px)';
+  var have_menu = window.matchMedia(media_query_menu).matches;  
+  if(!have_menu) {
+    lists_menu.style.transform = "translateX(0%)"
+  }
+  else {
+    lists_menu.style.transform = "translateX(-90%)"
+  }
+}, true);
+
+tasks_div.addEventListener('click', function(e) {
+  var media_query_menu = 'screen and (max-width:835px)';
+  var have_menu = window.matchMedia(media_query_menu).matches;  
+  if(!have_menu) return
+  if(is_lists_menu_open) {
+    lists_menu.style.transform = "translateX(-90%)"   
+    is_lists_menu_open = false
+  }
+})
+
+lists_menu.addEventListener('click', function(e) {
+  var media_query_menu = 'screen and (max-width:835px)';
+  var have_menu = window.matchMedia(media_query_menu).matches; if(!have_menu) return
+  if(!is_lists_menu_open) {
+    lists_menu.style.transform = "translateX(0%)"
+    is_lists_menu_open = true
+  }
+})
 
 tasks_container.addEventListener('click', function(e) {
   if (e.target.tagName.toLowerCase() === 'input') {
