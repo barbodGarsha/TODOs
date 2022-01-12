@@ -76,6 +76,7 @@ header {
             border: none;
             outline:none;
             color: #E8E6E2;
+            font-size: 1rem;
         }
 
         button {
@@ -250,7 +251,7 @@ header {
 
 @media screen and (max-width: 835px) {
     :root {
-        font-size: .6.2rem;
+        font-size: .62rem;
     }
     .content {
         position: relative;
@@ -261,5 +262,23 @@ header {
         position: absolute;
         height: 100vh;
         transition: 200ms;
+    }
+}
+
+@media screen and (max-width: 505px) {
+    :root {
+        font-size: .55rem;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    :root {
+        font-size: .5rem;
+    }
+}
+
+@media screen and (max-width: 350px) {
+    :root {
+        font-size: .4rem;
     }
 }

@@ -23,19 +23,21 @@ let selected_list_id = localStorage.getItem(LOCAL_STORAGE_SELECTED_LIST_ID_KEY) 
 let is_lists_menu_open = false;
 
 window.addEventListener('resize', function(event) {
-  var media_query_menu = 'screen and (max-width:835px)';
-  var have_menu = window.matchMedia(media_query_menu).matches;  
+  var media_query_menu = 'screen and (max-width:835px)'
+  var have_menu = window.matchMedia(media_query_menu).matches 
   if(!have_menu) {
     lists_menu.style.transform = "translateX(0%)"
+    is_lists_menu_open = true
   }
   else {
     lists_menu.style.transform = "translateX(-90%)"
+    is_lists_menu_open = false
   }
 }, true);
 
 tasks_div.addEventListener('click', function(e) {
-  var media_query_menu = 'screen and (max-width:835px)';
-  var have_menu = window.matchMedia(media_query_menu).matches;  
+  var media_query_menu = 'screen and (max-width:835px)'
+  var have_menu = window.matchMedia(media_query_menu).matches  
   if(!have_menu) return
   if(is_lists_menu_open) {
     lists_menu.style.transform = "translateX(-90%)"   
