@@ -21,10 +21,12 @@ const LOCAL_STORAGE_SELECTED_LIST_ID_KEY = 'task.selected_list_id'
 let lists = JSON.parse(localStorage.getItem(LOCAL_STORAGE_LIST_KEY)) || []
 let selected_list_id = localStorage.getItem(LOCAL_STORAGE_SELECTED_LIST_ID_KEY) || null
 let is_lists_menu_open = false;
+let window_width = window.innerWidth;
 
 window.addEventListener('resize', function(event) {
   var media_query_menu = 'screen and (max-width:835px)'
   var have_menu = window.matchMedia(media_query_menu).matches 
+  if(window_width == window.screen.width) return
   if(!have_menu) {
     lists_menu.style.transform = "translateX(0%)"
     is_lists_menu_open = true

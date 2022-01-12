@@ -281,8 +281,6 @@ header .logo {
   border: none;
   border-radius: 4px;
   outline: none;
-  -webkit-transition-duration: 0.3s;
-          transition-duration: 0.3s;
   background-color: #E8E6E2;
   cursor: pointer;
   margin-right: 1rem;
